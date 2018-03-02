@@ -12,6 +12,7 @@ source env.sh<br />
 cd ~/voltha-netoconf-server/proto2yang<br />
 mkdir yang<br />
 cd protos<br />
+chmod +x proto2yang.py<br />
 python -m grpc.tools.protoc -I. --plugin=protoc-gen-custom=./proto2yang.py --custom_out=../yang voltha.proto<br />
 python -m grpc.tools.protoc -I. --plugin=protoc-gen-custom=./proto2yang.py --custom_out=../yang events.proto<br />
 
