@@ -7,12 +7,13 @@ Also assuming proto2yang location at ~/voltha-netoconf-server/proto2yang<br />
 
 Follow below steps to generate yang files which will be placed in ~/proto2yang/yang directory from proto files<br />
 
-cd ~/cord/incubator/voltha<br />
-source env.sh<br />
-cd ~/voltha-netoconf-server/proto2yang<br />
-mkdir yang<br />
-cd protos<br />
-chmod +x proto2yang.py<br />
-python -m grpc.tools.protoc -I. --plugin=protoc-gen-custom=./proto2yang.py --custom_out=../yang voltha.proto<br />
-python -m grpc.tools.protoc -I. --plugin=protoc-gen-custom=./proto2yang.py --custom_out=../yang events.proto<br />
-
+<pre>
+cd ~/cord/incubator/voltha
+source env.sh
+cd ~/voltha-netoconf-server/proto2yang
+mkdir yang
+cd protos
+chmod +x proto2yang.py
+python -m grpc.tools.protoc -I. --plugin=protoc-gen-custom=./proto2yang.py --custom_out=../yang voltha.proto
+python -m grpc.tools.protoc -I. --plugin=protoc-gen-custom=./proto2yang.py --custom_out=../yang events.proto
+</pre>
